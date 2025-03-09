@@ -67,3 +67,5 @@ console.log(anagram("apple", "pale")); // Expected: false
 // Test Case 10:
 // "listen" rearranged becomes "silent"
 console.log(anagram("listen", "silent")); // Expected: true
+
+//solved the problem completely on my own

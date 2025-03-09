@@ -47,3 +47,5 @@ console.log(same([], [1])); // Expected: false (extra value in second array)
 console.log(same([3, 3, 3], [9, 9, 9])); // Expected: true
 console.log(same([3, 3, 3], [9, 9])); // Expected: false (missing one 9)
 console.log(same([2, 3], [4, 9, 9])); // Expected: false (extra 9)
+
+//solved the problem completely on my own
