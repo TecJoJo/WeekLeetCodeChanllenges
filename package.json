@@ -1,0 +1,14 @@
+{
+  "name": "weekleetcodechanllenges",
+  "version": "1.0.0",
+  "description": "Random week algorith challenge to help me to improve my codding problem solving skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yao Lu",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
