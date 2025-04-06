@@ -22,11 +22,17 @@ function findLongestSubstring(str){
     while (pointerB<str.length){
         if(!hasDuplication){
 
-            frequencyCounter[str[pointerB]] = frequencyCounter[str[pointerB]]?frequencyCounter[str[pointerB]]+1:0
+            frequencyCounter[str[pointerB]] = frequencyCounter[str[pointerB]]?frequencyCounter[str[pointerB]]+1:1
             if(frequencyCounter[str[pointerB]]>1){
                 hasDuplication = true
             }
+            //we update the maxLen only if no duplication is detected 
+            if(!hasDuplication){
+                maxLen = pointerB - pointerA+1 > maxLen ? pointerB - pointerA +1 : maxLen
+            }
+            
             pointerB++
+            
         }
         else{
             
@@ -41,12 +47,23 @@ function findLongestSubstring(str){
             //then pointerA move forward 
             pointerA ++
         }
-        maxLen = pointerB - pointerA +1 > maxLen ? pointerB - pointerA +1 : maxLen
+        
 
     }
 
-    
+    return maxLen
 
 
 
 }
+
+console.log(findLongestSubstring(''));// 0
+console.log(findLongestSubstring('rithmschool')) // 7
+console.log(findLongestSubstring('thisisawesome')) // 6
+console.log(findLongestSubstring('thecatinthehat') )// 7
+console.log(findLongestSubstring('bbbbbb') )// 1
+console.log(findLongestSubstring('longestsubstring')) // 8
+console.log(findLongestSubstring('thisishowwedoit')) // 6
+
+
+//Solved completely by myself!!!!
