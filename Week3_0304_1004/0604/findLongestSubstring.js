@@ -57,13 +57,52 @@ function findLongestSubstring(str){
 
 }
 
-console.log(findLongestSubstring(''));// 0
-console.log(findLongestSubstring('rithmschool')) // 7
-console.log(findLongestSubstring('thisisawesome')) // 6
-console.log(findLongestSubstring('thecatinthehat') )// 7
-console.log(findLongestSubstring('bbbbbb') )// 1
-console.log(findLongestSubstring('longestsubstring')) // 8
-console.log(findLongestSubstring('thisishowwedoit')) // 6
+function findLongestSubstringSlideWindow(str){
+    //the basic idea is we increment the length and slide then we increment and then slide
+    const uniqueLetterSet = new Set()
+    let currLen = 1
+    let maxLen = 1
+    let endIndex = 0
+    let startIndex = 0
+    while(endIndex<str.length){
+        const currSlice = str.slice(startIndex,endIndex+1)
+        //we validate the duplication using the set
+        // currSlice.foreach(letter=>uniqueLetterSet.add(letter))
+        for(let i of currSlice){
+            uniqueLetterSet.add(i)
+        }
+        if(uniqueLetterSet.size !== currSlice.length){
+            //we found the duplication 
+
+            
+            //move the endIndex to left by one notch 
+            endIndex -= 1 
+
+            //slide the window to right 
+            startIndex += 1 
+            endIndex += 1
+            
+        }else{
+
+            //we extend the window
+            endIndex += 1 
+        }
+        maxLen = currSlice > maxLen?currSlice:maxLen
+    }
+
+    return maxLen
+
+
+}
+
+
+// console.log(findLongestSubstringSlideWindow(''));// 0
+console.log(findLongestSubstringSlideWindow('rithmschool')) // 7
+console.log(findLongestSubstringSlideWindow('thisisawesome')) // 6
+console.log(findLongestSubstringSlideWindow('thecatinthehat') )// 7
+console.log(findLongestSubstringSlideWindow('bbbbbb') )// 1
+console.log(findLongestSubstringSlideWindow('longestsubstring')) // 8
+console.log(findLongestSubstringSlideWindow('thisishowwedoit')) // 6
 
 
 //Solved completely by myself!!!!
