@@ -71,3 +71,11 @@ console.log(sortedFrequency([1,1,2,2,2,2,3],2)) // 4
 console.log(sortedFrequency([1,1,2,2,2,2,3],3)) // 1 
 console.log(sortedFrequency([1,1,2,2,2,2,3],1)) // 2 
 console.log(sortedFrequency([1,1,2,2,2,2,3],4)) // -1
+
+
+
+//AI is not able to continue with my thinking pattern and fix the infinite loop, it keeps
+//increment by 1 in the range which is stupid in my opinion, saying if we have 
+//5x10* 100000 we will never able to find the edge. 
+//i don't have time anymore for continue this, and have to move on
+//Problem stayed unsolved. 
